@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6C9B19B9-C048-4FF0-A73B-091A8E376F72}</ProjectGuid>
+    <ProjectGuid>{B960BBC1-1E0B-4035-9FCA-5B1F9EB653F7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AgendaInfra</RootNamespace>
-    <AssemblyName>AgendaInfra</AssemblyName>
+    <RootNamespace>AgendaDominio</RootNamespace>
+    <AssemblyName>AgendaDominio</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,14 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Contacts.cs" />
+    <Compile Include="Contact.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\Dominio\AgendaDominio\AgendaDominio.csproj">
-      <Project>{b960bbc1-1e0b-4035-9fca-5b1f9eb653f7}</Project>
-      <Name>AgendaDominio</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

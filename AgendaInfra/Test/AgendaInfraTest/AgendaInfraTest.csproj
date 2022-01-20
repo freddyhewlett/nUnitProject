@@ -52,6 +52,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Dominio\AgendaDominio\AgendaDominio.csproj">
+      <Project>{b960bbc1-1e0b-4035-9fca-5b1f9eb653f7}</Project>
+      <Name>AgendaDominio</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\AgendaInfra\AgendaInfra.csproj">
       <Project>{6c9b19b9-c048-4ff0-a73b-091a8e376f72}</Project>
       <Name>AgendaInfra</Name>

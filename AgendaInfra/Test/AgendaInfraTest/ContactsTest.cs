@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AgendaInfra;
 using NUnit.Framework;
+using AgendaDominio;
 
 namespace AgendaInfraTest
 {
@@ -23,11 +24,10 @@ namespace AgendaInfraTest
         public void AddContactTest()
         {
             //Monta
-            string id = Guid.NewGuid().ToString();
-            string name = "Ghost";
+            Contact contact = new Contact() { Id = Guid.NewGuid(), Name = "Ghost" };
 
             //Executa
-            _contacts.AddContact(id, name);
+            _contacts.AddContact(contact);
 
             //Verifica
             Assert.True(true);
@@ -37,15 +37,36 @@ namespace AgendaInfraTest
         public void GetContactTest()
         {
             //Monta
-            string id = Guid.NewGuid().ToString();
-            string name = "Zombie";
+            Contact contact = new Contact() { Id = Guid.NewGuid(), Name = "Zombie" };
 
             //Executa
-            _contacts.AddContact(id, name);
-            string result = _contacts.GetContact(id);
+            _contacts.AddContact(contact);
+            Contact contactResult = _contacts.GetContact(contact.Id);
 
             //Verifica
-            Assert.AreEqual(name, result);
+            Assert.AreEqual(contact.Id, contactResult.Id);
+            Assert.AreEqual(contact.Name, contactResult.Name);
+        }
+
+        [Test]
+        public void GetAllTest()
+        {
+            //Monta
+            Contact contact1 = new Contact() { Id = Guid.NewGuid(), Name = "Skeleton" };
+            Contact contact2 = new Contact() { Id = Guid.NewGuid(), Name = "Wraith" };
+            Contact contact3 = new Contact() { Id = Guid.NewGuid(), Name = "Will O Wisp" };
+
+            //Executa
+            _contacts.AddContact(contact1);
+            _contacts.AddContact(contact2);
+            _contacts.AddContact(contact3);
+            List<Contact> contactList = _contacts.GetAll();
+            Contact contactResult = contactList.Where(c => c.Id == contact1.Id).FirstOrDefault();
+
+            //Verifica
+            Assert.IsTrue(contactList.Count > 1);
+            Assert.AreEqual(contactResult.Id, contact1.Id);
+            Assert.AreEqual(contactResult.Name, contact1.Name);
         }
 
         [TearDown]
