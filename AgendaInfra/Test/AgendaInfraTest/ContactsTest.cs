@@ -10,7 +10,7 @@ using AgendaDominio;
 namespace AgendaInfraTest
 {
     [TestFixture]
-    public class ContactsTest
+    public class ContactsTest : BaseTest
     {
         private Contacts _contacts;
 
