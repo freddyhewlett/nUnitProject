@@ -24,7 +24,7 @@ namespace AgendaInfraTest
         public void AddContactTest()
         {
             //Monta
-            Contact contact = new Contact() { Id = Guid.NewGuid(), Name = "Ghost" };
+            Contact contact = new Contact() { Id = Guid.NewGuid(), Nome = "Ghost" };
 
             //Executa
             _contacts.AddContact(contact);
@@ -37,7 +37,7 @@ namespace AgendaInfraTest
         public void GetContactTest()
         {
             //Monta
-            Contact contact = new Contact() { Id = Guid.NewGuid(), Name = "Zombie" };
+            Contact contact = new Contact() { Id = Guid.NewGuid(), Nome = "Zombie" };
 
             //Executa
             _contacts.AddContact(contact);
@@ -45,16 +45,16 @@ namespace AgendaInfraTest
 
             //Verifica
             Assert.AreEqual(contact.Id, contactResult.Id);
-            Assert.AreEqual(contact.Name, contactResult.Name);
+            Assert.AreEqual(contact.Nome, contactResult.Nome);
         }
 
         [Test]
         public void GetAllTest()
         {
             //Monta
-            Contact contact1 = new Contact() { Id = Guid.NewGuid(), Name = "Skeleton" };
-            Contact contact2 = new Contact() { Id = Guid.NewGuid(), Name = "Wraith" };
-            Contact contact3 = new Contact() { Id = Guid.NewGuid(), Name = "Will O Wisp" };
+            Contact contact1 = new Contact() { Id = Guid.NewGuid(), Nome = "Skeleton" };
+            Contact contact2 = new Contact() { Id = Guid.NewGuid(), Nome = "Wraith" };
+            Contact contact3 = new Contact() { Id = Guid.NewGuid(), Nome = "Will O Wisp" };
 
             //Executa
             _contacts.AddContact(contact1);
@@ -66,7 +66,7 @@ namespace AgendaInfraTest
             //Verifica
             Assert.IsTrue(contactList.Count > 1);
             Assert.AreEqual(contactResult.Id, contact1.Id);
-            Assert.AreEqual(contactResult.Name, contact1.Name);
+            Assert.AreEqual(contactResult.Nome, contact1.Nome);
         }
 
         [TearDown]
