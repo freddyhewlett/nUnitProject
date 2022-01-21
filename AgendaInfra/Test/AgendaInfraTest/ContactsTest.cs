@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using AgendaInfra;
 using NUnit.Framework;
 using AgendaDominio;
+using AutoFixture;
 
 namespace AgendaInfraTest
 {
@@ -13,18 +14,20 @@ namespace AgendaInfraTest
     public class ContactsTest : BaseTest
     {
         private Contacts _contacts;
+        private Fixture _fixture;
 
         [SetUp]
         public void SetUp()
         {
             _contacts = new Contacts();
+            _fixture = new Fixture();
         }
 
         [Test]
         public void AddContactTest()
         {
             //Monta
-            Contact contact = new Contact() { Id = Guid.NewGuid(), Nome = "Ghost" };
+            Contact contact = _fixture.Create<Contact>();
 
             //Executa
             _contacts.AddContact(contact);
@@ -37,7 +40,7 @@ namespace AgendaInfraTest
         public void GetContactTest()
         {
             //Monta
-            Contact contact = new Contact() { Id = Guid.NewGuid(), Nome = "Zombie" };
+            Contact contact = _fixture.Create<Contact>();
 
             //Executa
             _contacts.AddContact(contact);
@@ -52,9 +55,9 @@ namespace AgendaInfraTest
         public void GetAllTest()
         {
             //Monta
-            Contact contact1 = new Contact() { Id = Guid.NewGuid(), Nome = "Skeleton" };
-            Contact contact2 = new Contact() { Id = Guid.NewGuid(), Nome = "Wraith" };
-            Contact contact3 = new Contact() { Id = Guid.NewGuid(), Nome = "Will O Wisp" };
+            Contact contact1 = _fixture.Create<Contact>();
+            Contact contact2 = _fixture.Create<Contact>();
+            Contact contact3 = _fixture.Create<Contact>();
 
             //Executa
             _contacts.AddContact(contact1);
@@ -73,6 +76,7 @@ namespace AgendaInfraTest
         public void TearDown()
         {
             _contacts = null;
+            _fixture = null;
         }
     }
 }
