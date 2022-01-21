@@ -50,28 +50,7 @@ namespace AgendaInfraTest
             Assert.AreEqual(contact.Id, contactResult.Id);
             Assert.AreEqual(contact.Nome, contactResult.Nome);
         }
-
-        [Test]
-        public void GetAllTest()
-        {
-            //Monta
-            Contact contact1 = _fixture.Create<Contact>();
-            Contact contact2 = _fixture.Create<Contact>();
-            Contact contact3 = _fixture.Create<Contact>();
-
-            //Executa
-            _contacts.AddContact(contact1);
-            _contacts.AddContact(contact2);
-            _contacts.AddContact(contact3);
-            List<Contact> contactList = _contacts.GetAll();
-            Contact contactResult = contactList.Where(c => c.Id == contact1.Id).FirstOrDefault();
-
-            //Verifica
-            Assert.IsTrue(contactList.Count > 1);
-            Assert.AreEqual(contactResult.Id, contact1.Id);
-            Assert.AreEqual(contactResult.Nome, contact1.Nome);
-        }
-
+        
         [TearDown]
         public void TearDown()
         {
