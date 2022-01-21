@@ -8,11 +8,11 @@ using Dapper;
 
 namespace AgendaInfra
 {
-    public class Contacts
+    public class ContactRepository
     {
         private string _stringConnection;
 
-        public Contacts()
+        public ContactRepository()
         {
             _stringConnection = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
         }
