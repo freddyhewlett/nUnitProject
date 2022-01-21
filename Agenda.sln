@@ -5,13 +5,15 @@ VisualStudioVersion = 16.0.31911.196
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgendaUI", "AgendaUI\AgendaUI\AgendaUI.csproj", "{7EF42F62-85B8-4330-A9E3-8C536114D0B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgendaInfra", "AgendaInfra\AgendaInfra\AgendaInfra.csproj", "{6C9B19B9-C048-4FF0-A73B-091A8E376F72}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgendaDAL", "AgendaInfra\AgendaInfra\AgendaDAL.csproj", "{6C9B19B9-C048-4FF0-A73B-091A8E376F72}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgendaInfraTest", "AgendaInfra\Test\AgendaInfraTest\AgendaInfraTest.csproj", "{34967262-AAA8-4E2F-87BE-62484BABC5DC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgendaDALTest", "AgendaInfra\Test\AgendaInfraTest\AgendaDALTest.csproj", "{34967262-AAA8-4E2F-87BE-62484BABC5DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgendaDominio", "Dominio\AgendaDominio\AgendaDominio.csproj", "{B960BBC1-1E0B-4035-9FCA-5B1F9EB653F7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgendaDomain", "Dominio\AgendaDominio\AgendaDomain.csproj", "{B960BBC1-1E0B-4035-9FCA-5B1F9EB653F7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{131C4343-4F8F-4783-9C38-7388F02AA6F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgendaRepos", "AgendaAbstract\AgendaAbstract\AgendaRepos.csproj", "{6E91814A-6050-43C5-8A25-AEA24A02D5C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +37,10 @@ Global
 		{B960BBC1-1E0B-4035-9FCA-5B1F9EB653F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B960BBC1-1E0B-4035-9FCA-5B1F9EB653F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B960BBC1-1E0B-4035-9FCA-5B1F9EB653F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E91814A-6050-43C5-8A25-AEA24A02D5C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E91814A-6050-43C5-8A25-AEA24A02D5C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E91814A-6050-43C5-8A25-AEA24A02D5C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E91814A-6050-43C5-8A25-AEA24A02D5C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

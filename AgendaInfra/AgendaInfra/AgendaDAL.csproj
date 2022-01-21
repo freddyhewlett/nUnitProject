@@ -45,15 +45,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ContactRepository.cs" />
-    <Compile Include="Interfaces\IContactRepository.cs" />
-    <Compile Include="Interfaces\ITelephoneRepository.cs" />
+    <Compile Include="Contacts.cs" />
+    <Compile Include="Interfaces\IContacts.cs" />
+    <Compile Include="Interfaces\ITelephones.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Dominio\AgendaDominio\AgendaDominio.csproj">
+    <ProjectReference Include="..\..\Dominio\AgendaDominio\AgendaDomain.csproj">
       <Project>{b960bbc1-1e0b-4035-9fca-5b1f9eb653f7}</Project>
-      <Name>AgendaDominio</Name>
+      <Name>AgendaDomain</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

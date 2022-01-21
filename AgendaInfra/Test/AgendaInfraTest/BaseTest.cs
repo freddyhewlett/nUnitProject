@@ -4,7 +4,7 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.IO;
 
-namespace AgendaInfraTest
+namespace AgendaDALTest
 {
     public class BaseTest
     {

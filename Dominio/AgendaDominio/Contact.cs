@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AgendaDominio
+namespace AgendaDomain
 {
     public class Contact
     {

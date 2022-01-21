@@ -1,10 +1,10 @@
-﻿using AgendaDominio;
+﻿using AgendaDomain;
 using System;
 using System.Collections.Generic;
 
-namespace AgendaInfra
+namespace AgendaDAL
 {
-    public interface ITelephoneRepository
+    public interface ITelephones
     {
         List<ITelephone> GetAllFromContact(Guid contactId);
 

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace AgendaDominio
+namespace AgendaDomain
 {
     public interface IContact
     {

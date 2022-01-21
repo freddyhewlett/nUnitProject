@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\..\..\packages\NUnit3TestAdapter.4.2.0\build\net35\NUnit3TestAdapter.props" Condition="Exists('..\..\..\packages\NUnit3TestAdapter.4.2.0\build\net35\NUnit3TestAdapter.props')" />
+  <Import Project="..\..\..\packages\NUnit3TestAdapter.4.2.1\build\net35\NUnit3TestAdapter.props" Condition="Exists('..\..\..\packages\NUnit3TestAdapter.4.2.1\build\net35\NUnit3TestAdapter.props')" />
   <Import Project="..\..\..\packages\NUnit.3.13.2\build\NUnit.props" Condition="Exists('..\..\..\packages\NUnit.3.13.2\build\NUnit.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -62,13 +62,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Dominio\AgendaDominio\AgendaDominio.csproj">
+    <ProjectReference Include="..\..\..\Dominio\AgendaDominio\AgendaDomain.csproj">
       <Project>{b960bbc1-1e0b-4035-9fca-5b1f9eb653f7}</Project>
-      <Name>AgendaDominio</Name>
+      <Name>AgendaDomain</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\AgendaInfra\AgendaInfra.csproj">
+    <ProjectReference Include="..\..\AgendaInfra\AgendaDAL.csproj">
       <Project>{6c9b19b9-c048-4ff0-a73b-091a8e376f72}</Project>
-      <Name>AgendaInfra</Name>
+      <Name>AgendaDAL</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -86,6 +86,6 @@
       <ErrorText>Este projeto faz referência a pacotes do NuGet que não estão presentes neste computador. Use a Restauração de Pacotes do NuGet para baixá-los.  Para obter mais informações, consulte http://go.microsoft.com/fwlink/?LinkID=322105. O arquivo ausente é {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\..\..\packages\NUnit.3.13.2\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\NUnit.3.13.2\build\NUnit.props'))" />
-    <Error Condition="!Exists('..\..\..\packages\NUnit3TestAdapter.4.2.0\build\net35\NUnit3TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\NUnit3TestAdapter.4.2.0\build\net35\NUnit3TestAdapter.props'))" />
+    <Error Condition="!Exists('..\..\..\packages\NUnit3TestAdapter.4.2.1\build\net35\NUnit3TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\NUnit3TestAdapter.4.2.1\build\net35\NUnit3TestAdapter.props'))" />
   </Target>
 </Project>

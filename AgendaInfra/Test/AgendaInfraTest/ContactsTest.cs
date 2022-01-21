@@ -1,21 +1,22 @@
-﻿using AgendaInfra;
+﻿using AgendaDAL;
 using NUnit.Framework;
-using AgendaDominio;
+using AgendaDomain;
 using AutoFixture;
 using System;
+using AgendaDALTest;
 
 namespace AgendaInfraTest
 {
     [TestFixture]
     public class ContactsTest : BaseTest
     {
-        private ContactRepository _contacts;
+        private Contacts _contacts;
         private Fixture _fixture;
 
         [SetUp]
         public void SetUp()
         {
-            _contacts = new ContactRepository();
+            _contacts = new Contacts();
             _fixture = new Fixture();
         }
 

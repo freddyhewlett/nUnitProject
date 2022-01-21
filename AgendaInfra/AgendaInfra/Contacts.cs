@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
-using AgendaDominio;
+using AgendaDomain;
 using Dapper;
 
-namespace AgendaInfra
+namespace AgendaDAL
 {
-    public class ContactRepository
+    public class Contacts
     {
         private string _stringConnection;
 
-        public ContactRepository()
+        public Contacts()
         {
             _stringConnection = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
         }
