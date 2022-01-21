@@ -22,9 +22,19 @@ namespace AgendaReposTest
         }
 
         [Test]
-        public void Test()
+        public void GetContactWithPhoneList()
         {
+            //Monta
+                //CriarMoq IContaxt
+                //Moq função GetById de IContact
+                //Criar moq ITelephone
+                //Moq função GetAllFromContact
 
+            //Executa
+                //Chamar metodo GetById de ContactRepository
+
+            //Verifica
+                //Verificar se o contact retornado contem os mesmos dados do moq de IContao com a lista de telefones do moq ITelefone
         }
 
         [TearDown]

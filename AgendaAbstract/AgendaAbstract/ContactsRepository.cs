@@ -1,5 +1,7 @@
 ﻿using AgendaDAL;
+using AgendaDomain;
 using System;
+using System.Collections.Generic;
 
 namespace AgendaRepos
 {
@@ -14,6 +16,12 @@ namespace AgendaRepos
             _telephones = telephones;
         }
 
-
+        public IContact GetById(Guid id)
+        {
+            IContact contact = _contacts.Get(id);
+            List<ITelephone> phoneList = _telephones.GetAllFromContact(id);
+            contact.Telephones = phoneList;
+            return contact;
+        }
     }
 }
