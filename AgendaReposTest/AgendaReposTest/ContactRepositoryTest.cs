@@ -31,20 +31,19 @@ namespace AgendaReposTest
             Guid testPhoneId = Guid.NewGuid();
 
             //Monta
-            Mock<IContact> mockContact = new Mock<IContact>();
-            mockContact.SetupGet(c => c.Id).Returns(testContactId);
-            mockContact.SetupGet(n => n.Nome).Returns("Ghost");
+            Mock<IContact> mockContact = IContactBuilder.One().WithId(testContactId).WithName("Ghost").Get();
             mockContact.SetupSet(t => t.Telephones = It.IsAny<List<ITelephone>>())
                 .Callback<List<ITelephone>>(p => testPhoneList = p);
             
             _contacts.Setup(c => c.Get(testContactId)).Returns(mockContact.Object);
+
+            ITelephone mockPhone = ITelephoneBuilder.One()
+                .Model()
+                .WithId(testPhoneId)
+                .WithContactId(testContactId)
+                .Build();
             
-            Mock<ITelephone> mockTelephone = new Mock<ITelephone>();
-            mockTelephone.SetupGet(c => c.Id).Returns(testPhoneId);
-            mockTelephone.SetupGet(t => t.Numero).Returns("1234-1234");
-            mockTelephone.SetupGet(n => n.ContatoId).Returns(testContactId);
-            
-            _telephones.Setup(t => t.GetAllFromContact(testContactId)).Returns(new List<ITelephone> { mockTelephone.Object });
+            _telephones.Setup(t => t.GetAllFromContact(testContactId)).Returns(new List<ITelephone> { mockPhone });
 
             //Executa
             IContact result = _contactRepository.GetById(testContactId);
@@ -54,9 +53,9 @@ namespace AgendaReposTest
             //Verificar se o contact retornado contem os mesmos dados do moq de IContato com a lista de telefones do moq ITelefone
             Assert.AreEqual(mockContact.Object.Id, result.Id);
             Assert.AreEqual(mockContact.Object.Nome, result.Nome);
-            Assert.AreEqual(1, result.Telephones.Count);
-            Assert.AreEqual(mockTelephone.Object.Numero, result.Telephones[0].Numero);
-            Assert.AreEqual(mockTelephone.Object.Id, result.Telephones[0].Id);
+            Assert.AreEqual(result.Telephones.Count, 1);
+            Assert.AreEqual(mockPhone.Numero, result.Telephones[0].Numero);
+            Assert.AreEqual(mockPhone.Id, result.Telephones[0].Id);
             Assert.AreEqual(mockContact.Object.Id, result.Telephones[0].ContatoId);
         }
 
