@@ -68,6 +68,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseBuilder.cs" />
     <Compile Include="ContactRepositoryTest.cs" />
     <Compile Include="IContactBuilder.cs" />
     <Compile Include="ITelephoneBuilder.cs" />
