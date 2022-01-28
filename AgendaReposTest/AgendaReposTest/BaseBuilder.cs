@@ -1,5 +1,4 @@
-﻿using AgendaDomain;
-using AutoFixture;
+﻿using AutoFixture;
 using Moq;
 using System;
 

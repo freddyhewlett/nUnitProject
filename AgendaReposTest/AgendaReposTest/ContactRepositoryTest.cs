@@ -50,7 +50,6 @@ namespace AgendaReposTest
             mockContact.SetupGet(t => t.Telephones).Returns(testPhoneList);
 
             //Verifica
-            //Verificar se o contact retornado contem os mesmos dados do moq de IContato com a lista de telefones do moq ITelefone
             Assert.AreEqual(mockContact.Object.Id, result.Id);
             Assert.AreEqual(mockContact.Object.Nome, result.Nome);
             Assert.AreEqual(result.Telephones.Count, 1);

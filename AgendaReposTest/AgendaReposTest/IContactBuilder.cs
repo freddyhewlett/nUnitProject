@@ -1,6 +1,5 @@
 ﻿using AgendaDomain;
 using AutoFixture;
-using Moq;
 using System;
 
 namespace AgendaReposTest
